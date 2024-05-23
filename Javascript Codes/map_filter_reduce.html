@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //map
+      const nums = [5, 4, 3, 2, 1];
+
+      const multiplyByThree = nums.map((num, i, arr) => {
+        return num * 3;
+      });
+      console.log(multiplyByThree);
+    </script>
+
+    <script>
+      //map incase of filter see output
+      const nums1 = [5, 4, 3, 2, 1];
+
+      const filteredNums = nums.map((num, i, arr) => {
+        return num > 3;
+      });
+      console.log(filteredNums);
+
+      //filter
+
+      const nums2 = [5, 4, 3, 2, 1];
+
+      const filteredNums2 = nums.filter((num, i, arr) => {
+        return num > 3;
+      });
+      console.log(filteredNums2);
+
+    </script>
+
+    <script>
+        //Reduce
+
+        const nums3 = [5, 4, 3, 2, 1];
+
+        const sum = nums3.reduce((acc,curr,i,arr)=>{
+            return acc+curr;
+        },0)
+
+        console.log(sum);
+    </script>
+  </body>
+</html>

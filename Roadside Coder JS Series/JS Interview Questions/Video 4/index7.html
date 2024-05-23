@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Q7 make the function run only once even after calling function many times it should not run, it should run once only
+
+      let view;
+      function likeTheVideo() {
+        let called = 0;
+        return function () {
+          if (called > 0) {
+            console.log("Already Subscribed");
+          } else {
+            view = "Shubham";
+            console.log("Subscribe to ", view);
+            called++;
+          }
+        };
+      }
+
+      let isSubscribed = likeTheVideo();
+      isSubscribed();
+      isSubscribed();
+      isSubscribed();
+    </script>
+
+    <script>
+      //Q8 we will make polyfill for above question for load only once function
+      //to understand this you should have knowledge about apply function and this keyword
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Q16 Polyfill for Apply
+
+        let car1 = {
+            color:"Red",
+            company:"ferrari",
+        }
+
+        function purchaseCar(currency,price){
+            console.log(`I have purchased ${this.color} - ${this.company} car for ${currency} ${price}`);
+        }
+
+       // purchaseCar.apply(car1, ["Rs", 5000000]);
+
+       //polyfill for apply
+       Function.prototype.myApply=function(context={}, args=[]){
+        if(typeof this !== "function"){
+            throw new Error(this + "Its not callable");
+        }
+        if(!Array.isArray(args)){
+            throw new TypeError("CreateListFromArrayLike called on non-object");
+        }
+
+        context.fn = this;
+        context.fn(...args);
+       }
+
+       purchaseCar.myApply(car1, ["Rs", 5000000]);
+    </script>
+</body>
+</html>

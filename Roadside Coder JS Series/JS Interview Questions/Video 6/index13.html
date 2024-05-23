@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const value={number:10};
+
+        const multiply = (x={...value})=>{
+            console.log((x.number*=2))
+        }
+        multiply()//20
+        multiply()//20
+        multiply(value)//20
+        multiply(value)//40
+    </script>
+</body>
+</html>

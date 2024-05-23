@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Why do we use currying=
+        //1. To avoid passing same variable again and again
+        //2. To create high order functions
+        //3. To make your function pure and less prone to errors
+    </script>
+
+    <script>
+        //Q1 sum(2)(6)(1)
+
+        //regular 3 arguments sum
+
+        function sum(a,b,c){
+            return a+b+c;
+        }
+
+        console.log(sum(2,3,4));
+        //output=9
+
+        //But with currying
+
+        function sum1(a){
+            return function(b){
+                return function(c){
+                    return a+b+c;
+            }
+            }
+        }
+
+        console.log(sum1(2)(3)(4));
+        //output=9
+    </script>
+</body>
+</html>

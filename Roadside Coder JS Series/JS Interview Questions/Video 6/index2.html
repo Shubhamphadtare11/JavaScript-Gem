@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //How to add keys and values dynamically from outside
+
+      const property = "firstName";
+      const name = "Shubham";
+
+      const user = {
+        //we can add value directly, but for key we will wrap inside []
+        [property]: name,
+      };
+
+      console.log(user);
+      //output={firstName: 'Shubham'}
+
+      console.log(user.firstName);
+      //output=Shubham
+    </script>
+
+    <script>
+      //How to access each values of object, using For in loop
+
+      const employee = {
+        name: "Shubham Phadtare",
+        age: 25,
+        isTotallyAwesome: true,
+      };
+
+      for (key in employee) {
+        console.log(employee);
+      }
+      //output=
+      //         {name: 'Shubham Phadtare', age: 25, isTotallyAwesome: true}
+      // index2.html:37 {name: 'Shubham Phadtare', age: 25, isTotallyAwesome: true}
+      // index2.html:37 {name: 'Shubham Phadtare', age: 25, isTotallyAwesome: true}
+
+      for (key in employee) {
+        console.log(employee[key]);
+      }
+      //output=
+      //         Shubham Phadtare
+      //  25
+      //  true
+    </script>
+  </body>
+</html>

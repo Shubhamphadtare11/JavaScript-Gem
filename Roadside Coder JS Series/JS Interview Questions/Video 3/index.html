@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Functions in javasript
+
+        //1. Function Declaration
+
+        function square(num){
+            return num*num;
+        }
+
+        //2. Function Expression
+
+        const square1 = function (num){
+            return num*num;
+        } 
+
+        //3. First class functions
+        //In a language where function can be treated like a variable there functions are called first class functions
+
+
+        function square2(num){
+            return num*num;
+        }
+
+        function displaySqaure(fn){
+            console.log("Square is " + fn(5))
+        }
+
+        displaySqaure(square2);
+
+        //4. What is IIFE
+        //Immediately Invoked Function Expression
+
+        (function square3(num){
+            console.log(num*num)
+        })(6)
+    </script>
+</body>
+</html>

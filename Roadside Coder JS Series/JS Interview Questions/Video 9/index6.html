@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Questions
+
+        //Q.1
+        console.log("Start");
+        const promise1 = new Promise((resolve,reject)=>{
+            console.log(1);
+            resolve(2);
+        })
+        promise1.then((res)=>{
+            console.log(res);
+        })
+        console.log("End");
+
+        //Output=
+//         Start
+// index6.html:15 1
+// index6.html:21 End
+// index6.html:19 2
+
+//Reason= Javascript code will initiate synchronous code first then asynchronous
+    </script>
+</body>
+</html>

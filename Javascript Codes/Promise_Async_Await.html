@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        console.log("start")
+
+        function sub(){
+            return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                const result = true;
+                if(result) resolve("Subscribe to shubham")
+                else reject (new Error("Subscribe to shubham"))
+            },2000)
+        })
+    }
+
+        // sub.then((res)=>{
+        //         console.log(res)
+        // }).catch((err)=>{
+        //     console.log(err)
+        // })
+
+
+        //instead of using .then and .catch nowdays modern approaches are used to handle promises are async and await as below
+        const result = async ()=>{
+            try{
+            const message1 = await sub();
+            console.log({message1});
+        }
+        catch(error){
+            console.error("Promise Failed", error);
+        }
+        }
+
+        result();
+        
+        console.log("stop")
+    </script>
+</body>
+</html>

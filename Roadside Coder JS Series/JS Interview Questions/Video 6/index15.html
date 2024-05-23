@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        //Q16 what is shallow copy and deep copy
+        //shallow copy=when one object holds reference to another object this is known as shallow copy
+        //deep copy=when we completely clone an object in another variable that is known as deep copy
+
+      //how to deep copy/clone an object
+
+      //1st way
+      
+      let user = {
+        name: "Shubham Phadtare",
+        age: 25,
+      };
+
+      //this will not clone nested objects
+      const objClone = Object.assign({}, user);
+      objClone.name = "Shubham"; //this will not affect original object
+
+      console.log(user, objClone);
+      //         {
+      //     "name": "Shubham Phadtare",
+      //     "age": 25
+      // }
+
+      // {
+      //     "name": "Shubham",
+      //     "age": 25
+      // }
+    </script>
+
+    <script>
+      //2nd way
+
+      let user1 = {
+        name: "Shubham Phadtare",
+        age: 25,
+      };
+
+      //this will not clone nested objects
+      const objClone1 = JSON.parse(JSON.stringify(user1));
+      objClone1.name = "Shubham"; //this will not affect original object
+
+      console.log(user1, objClone1);
+    </script>
+
+    <script>
+      //3rd way
+
+      let user2 = {
+        name: "Shubham Phadtare",
+        age: 25,
+      };
+
+      const objClone2 = { ...user2 };
+      objClone1.name = "Shubham"; //this will not affect original object
+
+      console.log(user1, objClone1);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Q.6 What is output
+
+        var status="Hi";
+
+        setTimeout(()=>{
+            const status="Hello";
+
+            const data = {
+             status:"Shubham",
+             getStatus(){
+                return this.status;
+             },     
+            }   
+            console.log(data.getStatus());
+            //Output=Shubham
+            console.log(data.getStatus.call(this));
+            //Output=Hi
+        },0);
+    </script>
+</body>
+</html>

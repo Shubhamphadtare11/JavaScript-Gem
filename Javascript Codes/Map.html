@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let myArray = [1, 2, 3, 4];
+
+      const returnValue = myArray
+        .map((element) => {
+          return element * element;
+        })
+        .reverse();
+      console.log(returnValue);
+      console.log(myArray);
+    </script>
+  </body>
+</html>

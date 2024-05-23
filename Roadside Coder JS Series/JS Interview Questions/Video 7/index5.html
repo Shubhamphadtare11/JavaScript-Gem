@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         const user={
+            name:"Shubham Phadtare",    
+            logMessage(){
+                console.log(this.name);
+            },
+        };
+
+        setTimeout(user.logMessage, 1000);
+        //output=blank, because setTimeout will take first argument as callback and it has not access to this
+    </script>
+
+    <script>
+        //to work above code, we will wrap inside function
+
+        const user1={
+            name:"Shubham Phadtare",    
+            logMessage(){
+                console.log(this.name);
+            },
+        };
+
+        setTimeout(function(){
+            user1.logMessage();
+        }, 1000);
+
+        //output=Shubham Phadtare
+    </script>
+</body>
+</html>

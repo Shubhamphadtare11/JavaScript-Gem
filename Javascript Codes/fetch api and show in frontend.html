@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+import "./styles.css";
+import react, { useState, useEffect } from "react";
+
+export default function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetchAPI();
+  }, []);
+
+  // async function fetchAPI() {
+  //   fetch("https://json-placeholder.mock.beeceptor.com/users")
+  //     .then((res) => res.json())
+  //     .then((res) => setUser(res))
+  //     .catch((err) => console.log(err));
+  // }
+
+  async function fetchAPI() {
+    try {
+      const data = await fetch(
+        "https://json-placeholder.mock.beeceptor.com/users"
+      );
+      const json = await data.json();
+      setUser(json);
+    } catch (error) {
+      console.error("Promise Failed", error);
+    }
+  }
+
+  return (
+    <div>
+      <h1>
+        {user &&
+          user?.map((data, i) => {
+            return <div key={i}>{data.name}</div>;
+          })}
+      </h1>
+    </div>
+  );
+}
+
+    </script>
+</body>
+</html>

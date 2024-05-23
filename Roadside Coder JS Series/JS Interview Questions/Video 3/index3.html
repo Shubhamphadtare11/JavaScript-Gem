@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //functions are hoisted completely
+
+      functionName();
+
+      function functionName() {
+        console.log("Hi Shubham");
+        //Output=Hi Shubham
+      }
+
+      //hoisting for var is undefined
+
+      console.log(x);
+      //Output=undefined
+
+     var x = 5;
+
+    </script>
+    
+    <script>
+
+//For this y will print undefined because first function is called then variable initialised 
+
+      functionName1();
+      
+      function functionName1() {
+        console.log("Hi Shubham");
+        //Output=Hi Shubham
+        console.log(y);
+        //Output=undefined
+      }
+      var y = 5;
+
+    </script>
+    <script>
+
+//For this z will print undefined because first function is called then variable initialised 
+
+        functionName2();
+        var z = 5;
+      function functionName2() {
+        console.log("Hi Shubham");
+        //Output=Hi Shubham
+        console.log(z);
+        //Output=undefined
+      }
+    </script>
+
+    <script>
+
+//For this p will be printed 5 because first variable initialised then function is called
+
+        var p = 5;
+functionName3();
+        
+      function functionName3() {
+        console.log("Hi Shubham");
+        //Output=Hi Shubham
+        console.log(p);
+        //Output=5
+      }
+    </script>
+  </body>
+</html>

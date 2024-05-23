@@ -1,0 +1,24 @@
+<html>  
+<h3 style="color:green"> push() method </h3>  
+  
+  
+<body>  
+<p> Enter the movie name and click the button to add it to the array </p>  
+<b> Enter movie name: </b>   
+<input type="text" id="mv">   
+<button type=submit onclick="addObject()"> Add Elements </button>  
+<h4 id="result"> </h4> 
+
+<script>   
+    var seriesList = ["Rush Hour", " Harry Potter", " X Men"];   
+    document.write("<b> Initially elements in array: </b> <br>" + seriesList + "<br>");  
+    
+    function addObject() {   
+    var movie = document.getElementById("mv").value;  
+      //add new elementin list array        
+      seriesList.push(movie);   
+      document.getElementById("result").innerHTML = "<b> Array after adding new elements:</b> <br>" + seriesList;  
+    }   
+</script> 
+</body>     
+</html>

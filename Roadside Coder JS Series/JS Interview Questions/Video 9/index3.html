@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            console.log("Start");
+        //Output=Start
+        function importantAction1(username){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                resolve(`Subscribe to ${username}`)
+            },1000);
+            })
+        }
+
+        function likeTheVideo1(video){
+            
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                resolve(`Like the video ${video} video`);
+            },1000);
+            })
+        }
+
+        function shareTheVideo1(video){
+           
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                resolve(`Share the video ${video} video`);
+            },1000);
+            })
+        }
+
+        importantAction1("Shubham")
+        .then((res)=>{
+            console.log(res);
+            likeTheVideo1("Interview Questions").then((res)=>{
+                console.log(res);
+                shareTheVideo1("Interview Questions").then((res)=>{
+                    console.log(res); 
+                })
+            })
+        })
+        .catch((err)=>console.error(err));
+
+        console.log("Stop");
+
+        //but its again forming pyramid hell structure in promise also
+        //to solve this check index4.html, we done promise chaining
+    </script>
+</body>
+</html>

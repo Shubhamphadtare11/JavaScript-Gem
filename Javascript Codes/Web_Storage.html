@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="session">session</label>
+        <input id="textForSession" type="text">
+        <label for="local">local</label>
+        <input id="textForLocal" type="text">
+        <button onclick="saveFunc()" id="save">save</button>
+        <button onclick="removeFunc()" id="clear">clear</button>
+        <button onclick="displayFunc()" id="display">display</button>
+        <p id="dataUIOfSession"></p>
+        <p id="dataUIOfLocal"></p>
+
+        <script>
+            function saveFunc(){
+            
+                let inputValueSession = document.getElementById("textForSession").value;
+                let inputValueLocal = document.getElementById("textForLocal").value;
+                sessionStorage.setItem("datasession",inputValueSession);
+                localStorage.setItem("datalocal",inputValueLocal);
+            }
+
+            function removeFunc(){
+           
+                sessionStorage.removeItem("datasession");
+                localStorage.removeItem("datalocal");
+            }
+
+            
+            function displayFunc(){
+           
+           let DataSession = sessionStorage.getItem("datasession");
+           let LocalSession = localStorage.getItem("datalocal");
+           document.getElementById("dataUIOfSession").innerText = DataSession;
+           document.getElementById("dataUIOfLocal").innerText = LocalSession;
+       }
+        </script>
+    </div>
+</body>
+</html>

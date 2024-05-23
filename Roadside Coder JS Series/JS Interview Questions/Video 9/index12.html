@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Q8. Rewrite example code using 'async/await'
+        //instead of `.then/catch`
+        
+       async function loadJson(url){
+
+            let response = await fetch(url);
+
+            if(response.status==200){
+                let json = await response.json();
+                return json;
+            }
+
+            throw new Error(response.status);
+
+            // return fetch(url).then((response)=>{
+            //     if(response.status==200){
+            //         return response.json();
+            //     } else{
+            //         throw new Error(response.status);
+            //     }
+            // })
+        }
+
+        loadJson("https://sample.com").catch((err)=>{
+            console.log(err);
+        })
+    </script>
+</body>
+</html>

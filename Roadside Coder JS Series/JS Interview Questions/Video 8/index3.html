@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Q.4 Output based question
+
+      const person = { name: "Shubham" };
+
+      function sayHi(age) {
+        return `${this.name} is ${age}`
+      }
+
+      console.log(sayHi.call(person, 24));
+      //Shubham is 24
+      console.log(sayHi.bind(person, 24));
+    //   ƒ sayHi(age) {
+    //     return `${this.name} is ${age}`
+    //   }
+    </script>
+  </body>
+</html>

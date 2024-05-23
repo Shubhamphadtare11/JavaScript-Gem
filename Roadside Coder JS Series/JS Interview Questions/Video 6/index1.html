@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const func = (function(a){
+            delete a;
+            return a;
+        })(5);
+
+        console.log(func)
+
+        //output=5, It will not delete a, because delete keyword will delete object and a is variable not object
+    </script>
+
+    <script>
+        const user={
+            name:"Shubham",
+            age:24,
+            //we cannot have key where there is space between key, so we make string of key
+            "like this video":true
+        }
+
+        //To access key of like this video we will wrap inside [] during access
+
+        console.log(user["like this video"])
+         //output=true
+
+        delete user["like this video"];
+
+        console.log(user);
+        //output={name: 'Shubham', age: 24}
+
+    </script>
+</body>
+</html>

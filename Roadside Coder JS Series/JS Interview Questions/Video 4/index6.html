@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Q6 What is module pattern
+        //It will create private function, so it is not accesseble directly
+
+        var Module = (function(){
+            function privateMethod(){
+                console.log("private");
+            }
+            return{
+                publicMethod:function(){
+                    console.log("public")
+                },
+            };
+        })();
+
+        Module.publicMethod();
+        //output=public
+        Module.privateMethod();
+        //output=reference error
+    </script>
+</body>
+</html>

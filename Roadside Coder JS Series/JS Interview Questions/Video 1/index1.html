@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //In javascript introduction of let and const in es6 along with block scoping allows variable shadowing
+
+        function test(){
+            let a="Hello";
+
+            if(true){
+                let a = "Hi"; //this a will shadow the value of above a
+                console.log(a);
+                //Output=Hi
+            }
+            console.log(a);
+            //Output=Hello
+        }
+        test()
+
+    </script>
+    <script>
+        //we can shadow var variable using let but we cannot shadow opposite
+        //shadow let variable using var known as illeagle shadowing, it will give syntax error
+
+        function test1(){
+            var b="Hello";
+
+            if(true){
+                let b = "Hi"; //this a will shadow the value of above a
+                console.log(b);
+                //Output=Hi
+            }
+            console.log(b);
+            //Output=Hello
+        }
+        test1()
+
+    </script>
+</body>
+</html>

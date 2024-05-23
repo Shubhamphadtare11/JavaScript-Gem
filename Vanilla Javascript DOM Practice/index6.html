@@ -1,0 +1,19 @@
+<html>  
+<script>   
+    var seriesList = ["Sherlock", " Harry Potter", " Games of Throne"];   
+    document.write("<b> Initially elements in array: </b>" + seriesList + "<br>");  
+    
+    function pushFunction() {   
+      //add new element in array        
+      seriesList.push(" Avengers", " Prison Break", " The Spy");   
+      //return the array with new values  
+      document.getElementById("result").innerHTML = "<b> Array after adding new elements: </b> </br>" + seriesList;  
+    }   
+</script>   
+  
+<body>  
+<h3> Click the button to add three more elements to the array </h3>  
+<button onclick="pushFunction()"> Push Elements </button>  
+<h4 id="result">  
+</body>     
+</html>  

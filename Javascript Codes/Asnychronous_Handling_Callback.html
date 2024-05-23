@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Asynchronous program Example using callback
+
+        console.log("start")
+
+        function importantAction(username){
+            setTimeout(()=>{
+                return `subscribe to ${username}`;
+            },1000);
+        }
+
+        const message = importantAction("Hi Shubham");
+        console.log(message);
+
+        console.log("stop")
+
+        //to work above code, write below using callback
+
+        console.log("start")
+
+        function importantAction1(username, cb){
+            setTimeout(()=>{
+                cb(`subscribe to ${username}`);
+            },1000);
+        }
+
+        const message1 = importantAction1("Hi Shubham",(message)=>{
+            console.log(message);
+        });
+
+        console.log("stop")
+
+        //but for multiple async operations, it will cause callback hell, to avoid it we use promise, in next part
+    </script>
+</body>
+</html>

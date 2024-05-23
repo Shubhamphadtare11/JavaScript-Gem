@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //params and arguments
+      //rest and spread
+
+      //rest
+      function multiply(...nums) {
+        console.log(nums[0] * nums[1]);
+      }
+
+      var arr = [5, 6]; //arguments passed
+
+      multiply(...arr); //spread
+    </script>
+
+    <script>
+      const fn = (a, x, y, ...numbers) => {
+        console.log(a, x, y, numbers);
+      };
+
+      fn(5, 6, 7, 8, 9, 10, 11, 12);
+    </script>
+  </body>
+</html>

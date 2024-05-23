@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isPrime(num) {
+    if (num <= 1) return false;
+    if (num <= 3) return true;
+
+    if (num % 2 === 0 || num % 3 === 0) return false;
+
+    for (let i = 5; i * i <= num; i += 6) {
+        if (num % i === 0 || num % (i + 2) === 0) return false;
+    }
+
+    return true;
+}
+
+function printNPrimes(n) {
+    let count = 0;
+    let num = 2; // Start from the first prime number
+
+    while (count < n) {
+        if (isPrime(num)) {
+            console.log(num);
+            count++;
+        }
+        num++;
+    }
+}
+
+// Example usage: print the first 5 prime numbers
+printNPrimes(7);
+
+    </script>
+</body>
+</html>

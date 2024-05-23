@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Q15 Polyfill for call method
+
+
+        let car1 = {
+            color:"Red",
+            company:"ferrari",
+        }
+
+        function purchaseCar(currency,price){
+            console.log(`I have purchased ${this.color} - ${this.company} car for ${currency} ${price}`);
+        }
+
+       // purchaseCar.call(car1, "Rs", 5000000);
+
+       //polyfill for call
+       Function.prototype.myCall=function(context={}, ...args){
+        if(typeof this !== "function"){
+            throw new Error(this + "Its not callable");
+        }
+        context.fn = this;
+        context.fn(...args);
+       }
+
+       purchaseCar.myCall(car1, "Rs", 5000000);
+    </script>
+</body>
+</html>

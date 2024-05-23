@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //1. Array 
+        //get value of array in variable
+
+        const animalNames = ['Rex','Lola'];
+
+        const dogName = animalNames[0];
+        const catName = animalNames[1];
+
+        console.log(dogName)
+        console.log(catName)
+
+        //get value of array in variable using destructuring
+
+        const animalNames1 = ['Rex','Lola'];
+
+        const[dogName1,catName1] = animalNames1;
+
+        console.log(dogName1)
+        console.log(catName1)
+    </script>
+
+<script>
+
+    //2. Object Destructuring
+
+    const dog = {
+        name:'Rex',
+        age:5,
+        breed:'Labrador'
+    }
+
+    const{name, age, breed} = dog;
+
+    console.log(name)
+    console.log(age)
+    console.log(breed)
+
+    //Use of rest variable in object destructuring
+
+    const cat = {
+        name1:'Lola',
+        age:2,
+        breed:'Ragdoll'
+    }
+
+    const{name1, ...rest} = cat;
+
+    console.log(name)
+    console.log(rest)
+
+</script>
+<script>
+
+    //3. Change names of variable in Object Destructuring
+
+    const cow = {
+        fullname:'Bumpy',
+        fullage:5,
+        fullbreed:'Jersey'
+    }
+
+    const{fullname:cowName, fullage:cowAge, fullbreed:cowBreed} = cow;
+
+    console.log(cowName)
+    console.log(cowAge)
+    console.log(cowBreed)
+
+</script>
+<script>
+
+    //4. Removing an object from an array and store it in a new one
+
+    const data = [
+        {id:1, name:'first element'},
+        {id:2, name:'second element'},
+        {id:3, name:'third element'},
+        {id:4, name:'fourth element'},
+        {id:5, name:'fifth element'},
+    ]
+
+    const itemCut = data.splice(0,1)
+    console.log(itemCut)
+</script>
+</body>
+</html>

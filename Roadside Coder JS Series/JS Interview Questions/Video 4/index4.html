@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Closure in Javascript
+        //Q.4 Block scope and setTimeout
+
+        function a(){
+        for(var i=0; i<3; i++){
+            setTimeout(function log(){
+                console.log(i)
+            },i*1000)
+        }
+    }
+    a()
+
+    //output=3,3,3
+    //because var is having function scope
+
+    //if we still want output 1,2,3 from var in above case, we will do below modification
+
+    for(var i=0; i<3; i++){
+    function inner(i){
+            setTimeout(function log(){
+                console.log(i)
+            },i*1000)
+        }
+        inner(i);
+    }
+
+    </script>
+    <script>
+         function a(){
+        for(let i=0; i<3; i++){
+            setTimeout(function log(){
+                console.log(i)
+            },i*1000)
+        }
+    }
+    a()
+
+    //output=1,2,3
+    //because let is having block scope
+    </script>
+
+    <script>
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Start");
+        //Output=Start
+        function importantAction(username,cb){
+            setTimeout(()=>{
+                cb(`Subscribe to ${username}`)
+            },1000);
+        }
+
+        function likeTheVideo(video,cb){
+            setTimeout(()=>{
+                cb(`Like the video ${video} video`);
+            },1000);
+        }
+
+        const message = importantAction("Shubham",function(msg){
+            console.log(msg);
+            likeTheVideo("Interview Question", (action)=>{
+                console.log(action)
+            })
+        });
+
+        console.log("Stop");
+
+        //Output=
+//         Start
+// index1.html:31 Stop
+// index1.html:25 Subscribe to Shubham
+// index1.html:27 Like the video Interview Question video
+    </script>
+
+ 
+</body>
+</html>

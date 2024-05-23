@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Different type of functions in javascript
+
+        //1. Function Declaration
+        function display(name){
+            console.log('hello ' + name);
+        }
+
+        display('shubham')
+
+        //2. Function Expression
+
+        const display1 = function(name1){
+            console.log('hello ' + name1);
+        }
+
+        display1('Rahul')
+
+        //3. Arrow Function
+
+        const display2 = (name2)=>{
+            console.log('hello ' + name2);
+        }
+
+        display2('Sanket')
+
+        //4. Immediately Invoked Function(IIFE)
+
+        (function (name3){
+            console.log('hello ' + name3)
+        })('codeavengers')
+
+
+
+    </script>
+</body>
+</html>

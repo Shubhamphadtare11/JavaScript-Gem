@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //scope is a certain region of a program where defined variable exists and can be recognised and beyond that it cannot be recognised
+        //var vs let vs const
+        //var is function scope, let and const are block scope
+
+        //1.var example
+        {
+            var a=5;
+        }
+        console.log(a);
+
+        //output=5
+
+        //2.let example
+        {
+            let b=4;
+        }
+        console.log(b);
+
+        //output=Uncaught ReferenceError: b is not defined
+
+        //3.same for const
+        {
+            const c=1;
+        }
+        console.log(c);
+
+        //output=Uncaught ReferenceError: c is not defined
+
+    </script>
+   
+</body>
+</html>

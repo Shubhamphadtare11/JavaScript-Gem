@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //Q3
+
+        console.log("Start");
+        const fn =()=>
+            new Promise((resolve,reject)=>{
+            console.log(1);
+            resolve("success");
+        })
+        
+
+        console.log("Middle");
+
+        fn().then((res)=>{
+            console.log(res);
+        })
+        console.log("End");
+
+        //output=
+//         Start
+// index9.html:20 Middle
+// index9.html:15 1
+// index9.html:25 End
+// index9.html:23 success
+    </script>
+</body>
+</html>

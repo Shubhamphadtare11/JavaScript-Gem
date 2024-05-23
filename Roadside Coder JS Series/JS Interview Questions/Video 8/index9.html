@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Q10 Bound Function
+
+        function f(){
+            console.log(this);
+        }
+
+        let user = {
+            g: f.bind(null),
+        };
+
+        user.g();
+
+        //Output=It will point to window object 
+    </script>
+</body>
+</html>

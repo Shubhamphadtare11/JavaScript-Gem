@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //In javascript everything is object
+        //Object=An object is a collection of properties, and a property is an association between key and value
+
+        const user={
+            name:"Shubham",
+            age:25
+        }
+
+        console.log(user);
+        //output=
+        //{name: 'Shubham', age: 25}
+
+        console.log(user.name);
+        //output=Shubham
+        user.name="Rahul";
+        console.log(user.name);
+        //output=Rahul
+        delete user.age;
+
+        console.log(user);
+        //output={name: 'Rahul'}
+    </script>
+</body>
+</html>

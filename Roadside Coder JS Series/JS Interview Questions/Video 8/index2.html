@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Q.3 What is bind
+      //Instead of calling function right away like call and apply, Bind will return us the function which we can call later on to execute, It will give us the reusable function
+
+      var obj1 = { name: "Mangesh" };
+
+      function sayHello1() {
+        return "Hello " + this.name; //this will call the window object not name inside obj object
+      }
+
+      const bindFunc1 = sayHello1.bind(obj1);
+
+      console.log(bindFunc1());
+      //Output=Hello Mangesh
+
+      console.log(sayHello1.bind(obj1)());
+      //Output=Hello Mangesh
+    </script>
+
+    <script>
+      var obj = { name: "Shubham" };
+
+      function sayHello(age, profession) {
+        return "Hello " + this.name + " is " + age + " and is an " + profession; //this will call the window object not name inside obj object
+      }
+
+      console.log(sayHello.bind(obj, [24, "Software Engineer"]));
+      //It will return a function
+
+      //Output=ƒ sayHello(age, profession) {
+      //     return "Hello " + this.name + " is " + age + " and is an " + profession; //this will call the window object not name inside obj object
+      //   }
+
+      const bindFunc = sayHello.bind(obj);
+
+      console.log(bindFunc(24, "Software Engineer"));
+      //Output=Hello Shubham is 24 and is an Software Engineer
+
+      console.log(bindFunc(25, "Youtuber"));
+      //Output=Hello Shubham is 25 and is an Youtuber
+    </script>
+  </body>
+</html>

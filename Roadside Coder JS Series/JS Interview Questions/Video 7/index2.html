@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //arrow function
+
+        let user={
+            name:"Shubham",
+            age:25,
+            getDetails:()=>{
+                console.log(this.name);
+            },
+        };
+        user.getDetails();
+
+         //output=blank
+                //this happens because arrow function takes reference from its parent function and here no parent function
+    </script>
+
+    <script>
+           let user1={
+            name:"Shubham",
+            age:25,
+            getDetails(){
+                const nestedArrow = ()=>console.log(this.name);
+                nestedArrow()
+            },
+        };
+        user1.getDetails()
+        //output=Shubham
+    </script>
+</body>
+</html>

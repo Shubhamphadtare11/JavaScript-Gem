@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //destructuring of an object
+
+        let user = {
+            name:"Shubham",
+            age:25
+        }
+        
+        const{name}=user;
+
+        console.log(name);
+        //output=Shubham
+    </script>
+    <script>
+        //what if same name variable already present in script, we will rename destructured key
+
+         let user1 = {
+            name1:"Shubham1",
+            age1:25
+        }
+
+        const name1 = "Saru";
+    
+        const{name1:myName}=user1;
+
+        console.log(myName);
+        //output=Shubham1
+    </script>
+
+    <script>
+        //nested destructuring
+
+        let user2 = {
+            name2:"Shubham",
+            age2:25,
+            fullName:{
+                first:"Shubham",
+                last:"Phadtare",
+            },
+        }
+
+        const{fullName:{last},} = user2;
+
+        console.log(last);
+        //output=Phadtare
+
+    </script>
+</body>
+</html>

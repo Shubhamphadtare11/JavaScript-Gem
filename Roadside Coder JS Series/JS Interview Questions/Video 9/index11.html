@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //after this question Q6 and Q7 skipped
+        //Q5
+
+        function job(state){
+            return new Promise(function(resolve,reject){
+                if(state){
+                    resolve("success");
+                }else{
+                    reject("error");
+                }
+            });
+        }
+
+        let promise=job(true);
+
+        promise
+        .then(function(data){
+            console.log("data");
+
+            return job(false);
+        })
+        .catch(function(error){
+            console.log(error);
+            return "Error caught"
+        })
+        .then(function(data){
+            console.log(data);
+            return job(true);
+        })
+        .catch(function(error){
+            console.log(error);
+        })
+        
+
+        
+        //output=
+//         data
+// index11.html:32 error
+// index11.html:36 Error caught
+    </script>
+</body>
+</html>

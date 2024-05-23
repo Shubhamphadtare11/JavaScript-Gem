@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //There are 2 types when it comes binding of objects in javascript
+        //1. Implicit Binding=Implicit binding is applied when you invoke a function in an object using dot notation
+        //=using . operator
+        //this keyword
+
+        //2. Explicit binding is applied using below
+        //=call,apply,bind
+
+        this.a=5;
+
+        function getParam(){
+            console.log(this.a)
+            //output=5
+        }
+
+        getParam();
+    </script>
+
+    <script>
+        let user={
+            name:"Shubham",
+            age:25,
+            getDetails(){
+                console.log(this.name);
+            },
+        };
+
+        user.getDetails();
+        //output=Shubham
+    </script>
+</body>
+</html>

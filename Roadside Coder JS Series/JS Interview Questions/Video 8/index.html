@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Call, Bind, Apply in JS (Explicit Binding)
+      //Q.1 What is call
+
+      //1.
+      var obj = { name: "Shubham" };
+
+      function sayHello() {
+        return "Hello " + this.name; //this will call the window object not name inside obj object
+      }
+
+      console.log(sayHello());
+      //Output= Hello
+      //In output only Hello will be printed not name
+
+      //To solve above problem we will use call
+
+      console.log(sayHello.call(obj));
+      //Output= Hello Shubham
+
+      //2.
+      //to pass any argument inside function
+
+      var obj1 = { name: "Shubham" };
+
+      function sayHello1(age) {
+        return "Hello " + this.name + " is " + age; //this will call the window object not name inside obj object
+      }
+
+      console.log(sayHello1.call(obj, 24));
+    </script>
+  </body>
+</html>

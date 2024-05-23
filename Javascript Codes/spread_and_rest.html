@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //spread vs rest, params vs arguments
+
+        //below parameters getting, and array passed is called rest
+        function multiply(...nums){
+            console.log(nums[0]*nums[1]);
+        }
+
+        var arr = [5,6]
+
+        //below arguments are passed, spread operator for array
+        multiply(...arr);
+    </script>
+</body>
+</html>

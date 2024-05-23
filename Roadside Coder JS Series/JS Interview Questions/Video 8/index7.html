@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Q8 Append an array to another array
+
+        //1. Using spread
+        const array = ["a","b"];
+        const elements = [0,1,2];
+
+        array.push(...elements);
+
+        console.log(array);
+        //[
+//     "a",
+//     "b",
+//     0,
+//     1,
+//     2
+// ]
+
+        //2. using apply
+        const array1 = ["a","b"];
+        const elements1 = [0,1,2];
+
+        array1.push.apply(array1,elements1);
+
+        console.log(array1);
+          //[
+//     "a",
+//     "b",
+//     0,
+//     1,
+//     2
+// ]
+    </script>
+</body>
+</html>

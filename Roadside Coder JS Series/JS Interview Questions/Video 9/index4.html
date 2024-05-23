@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //promise chaining
+
+          console.log("Start");
+        //Output=Start
+        function importantAction1(username){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                resolve(`Subscribe to ${username}`)
+            },1000);
+            })
+        }
+
+        function likeTheVideo1(video){
+            
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                resolve(`Like the video ${video} video`);
+            },1000);
+            })
+        }
+
+        function shareTheVideo1(video){
+           
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                resolve(`Share the video ${video} video`);
+            },1000);
+            })
+        }
+
+        importantAction1("Shubham")
+        .then((res)=>{
+            console.log(res);
+            return likeTheVideo1("Interview Questions");        
+        })
+        .then((res)=>{
+            console.log(res);
+            return shareTheVideo1("Interview Questions"); 
+        })
+        .then((res)=>{
+            console.log(res)
+        })
+        .catch((err)=>console.error(err));
+
+        console.log("Stop");
+
+        //Output=
+//         Start
+// index4.html:52 Stop
+// index4.html:40 Subscribe to Shubham
+// index4.html:44 Like the video Interview Questions video
+// index4.html:48 Share the video Interview Questions video
+
+//to again make more easy we will use modern approach of handling promises async await in index5.html
+    </script>
+</body>
+</html>

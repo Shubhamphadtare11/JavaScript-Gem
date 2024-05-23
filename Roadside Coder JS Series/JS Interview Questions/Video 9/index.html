@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Promises in javascript
+        //Synchronous vs asynchronous code
+        //Callbacks=when we pass one function in another function as an argument known as callback
+
+        console.log("Start");
+        //Output=Start
+        function importantAction(username){
+            setTimeout(()=>{
+                return `Subscribe to ${username}`
+            },1000);
+        }
+        const message = importantAction("Shubham");
+
+        console.log(message);
+        //Output=Undefined
+        //we will use callback to solve above problem
+
+        console.log("Stop");
+        //Output=Stop
+    </script>
+
+    <script>
+        console.log("Start");
+        //Output=Start
+        function importantAction1(username1,cb){
+            setTimeout(()=>{
+                cb(`Subscribe to ${username1}`)
+            },1000);
+        }
+        const message1 = importantAction1("Shubham",function(msg){
+            console.log(msg);
+        });
+
+        console.log("Stop");
+
+        //Output=
+//         Start
+// index.html:43 Stop
+// index.html:40 Subscribe to Shubham
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1. Tricky hoisting question
+
+    //   var x = 21;
+
+    //   var fun = function () {
+    //     console.log(x);
+    //     //if we comment below it will give output of 21 if not commented output will be undefined
+    //     // var x=20;
+    //   };
+
+    //   fun();
+
+      //output for above will be undefined
+
+      //2.
+
+    //   function sum(a = 11, b = 6) {
+    //     return a + b;
+    //   }
+
+    //   console.log(sum(null, 20)); //20
+    //   console.log(sum(undefined, 20)); //31
+
+    //3.
+
+    // function x() {
+    //     var a = 7;
+    //     function y() {
+    //       console.log(a);
+    //     }
+    //     return y;
+    //   }
+    //   var z = x();
+    //   console.log(z); // value of z is entire code of function y
+
+    //4.
+
+    // function a(){
+    //         for(var i=0;i<3;i++){
+    //             setTimeout(function log(){
+    //                 console.log(i);
+    //             },i*1000);
+    //         }
+    //     }
+
+    //     a();
+
+    //     //output=3,3,3
+
+    // //this output is expected because var is having function scope, while let and var having block scope
+
+    // //solution to this is below
+
+    
+
+    //         for(var i=0;i<3;i++){
+    //             function inner(i){
+    //             setTimeout(function log(){
+    //                 console.log(i);
+    //             },i*1000);
+    //         }
+    //         inner(i);
+    //     }
+
+    //5.
+
+    function x(){
+            setTimeout(function(){
+                console.log(i)
+            },1000);
+            var i=1;
+        }
+        x()
+
+    </script>
+  </body>
+</html>

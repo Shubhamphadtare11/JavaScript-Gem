@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //global scope
+        function subscribe(){
+            var name ="hello coder";
+            //inner scope2
+            function displayName(){
+                //inner scope
+                alert(name);
+            }
+            displayName()
+        }
+        subscribe()
+
+        //output= alert hello coder
+
+    </script>
+    <script>
+        function makeFunc(){
+            var name = "Mozilla";
+            function displayName1(){
+                //inner scope
+                console.log(name);
+            }
+            return displayName1;
+        }
+       var myFunc = makeFunc()
+       myFunc();
+
+       //or
+       //makeFunc()()
+
+       //output= Mozilla
+    </script>
+    <script>
+         function makeFunc2(){
+            var name2 = "Mozilla";
+            function displayName2(num2){
+                //inner scope
+                console.log(name2,num2);
+            }
+            return displayName2;
+        }
+       makeFunc2()(5);
+
+       //output=Mozilla,5
+    
+    </script>
+
+    <script>
+
+        var userName3 = "shubham"; 
+
+         function makeFunc3(){
+            var name3 = "Mozilla";
+            function displayName3(num3){
+                //inner scope
+                console.log(name3,num3,userName3);//it will follow scope chain and also able to access variable of parent to parent
+            }
+            return displayName3;
+        }
+       makeFunc3()(5);
+
+       //output=Mozilla,5,shubham
+    </script>
+
+<script>
+    //Closure scope chain
+
+    var e=10;
+
+    function sum(a){
+        return function(b){
+            return function(c){
+                return function(d){
+                    return a+b+c+d+e;
+                };
+            };
+        };
+    };
+
+    console.log(sum(1)(2)(3)(4))
+
+    //output=10
+</script>
+</body>
+</html>

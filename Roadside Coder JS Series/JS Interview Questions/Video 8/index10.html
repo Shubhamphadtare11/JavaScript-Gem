@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Q11 Bind Chaining
+        //When the function bind to particular object, It will bound to that particular object
+
+        function f(){
+            console.log(this.name);
+        }
+
+        f=f.bind({name:"John"}).bind({name:"Ann"});
+
+        f();
+
+        //Output=John
+    </script>
+</body>
+</html>

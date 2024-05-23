@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function removeDuplicates(str) {
+        // Create a Set from the string to remove duplicates
+        let uniqueChars = new Set(str);
+
+        // Convert the Set back to a string
+        let uniqueStr = [...uniqueChars].join("");
+
+        return uniqueStr;
+      }
+
+      // Example usage:
+      let stringWithDuplicates = "hello";
+      let stringWithoutDuplicates = removeDuplicates(stringWithDuplicates);
+      console.log(stringWithoutDuplicates); // Output: "helo"
+    </script>
+  </body>
+</html>

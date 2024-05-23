@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Q2 
+        // evaluate("sum")(4)(2)=>6
+        // evaluate("multiply")(4)(2)=>8
+        // evaluate("divide")(4)(2)=>2
+        // evaluate("substract")(4)(2)=>2
+
+        //3 nesting functions and 3 arguments
+
+        function evaluate(operation){
+            return function(a){
+                return function(b){
+                    if(operation==="sum") return a+b;
+                   else if(operation==="multiply") return a*b;
+                   else if(operation==="divide") return a/b;
+                   else if(operation==="substract") return a-b;
+                   else return "Invalid Operator"
+                }
+            }
+        }
+
+        console.log(evaluate("sum")(4)(2));
+        //output=6
+
+        //instead above we can do below also
+
+        const addition = evaluate("sum");
+        const mul = evaluate("multiply");
+
+        console.log(addition(4)(2))
+        //output=6
+
+        console.log(mul(4)(2))
+        //output=8
+    </script>
+</body>
+</html>

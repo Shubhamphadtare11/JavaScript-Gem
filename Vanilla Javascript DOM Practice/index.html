@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" placeholder="email" />
+    <input type="password" placeholder="password" />
+    <button>Sign In</button>
+    <div id="problem-statements" style="width: 70vw">
+    
+    </div>
+    <script>
+
+const problems = [
+        {
+          title: "201. Bitwise AND of Numbers Range",
+          difficulty: "Medium",
+          acceptance: "42%",
+        },
+        {
+          title: "202. Happy Number",
+          difficulty: "Easy",
+          acceptance: "54.9%",
+        },
+        {
+          title: "203. Remove Linked List Elements",
+          difficulty: "Hard",
+          acceptance: "42%",
+        },
+      ];
+
+      renderProblems();
+
+        function renderProblems(){
+           const parentEl = document.getElementById("problem-statements");
+           const tableTag = document.createElement("table");
+           for(let i=0;i<problems.length;i++){
+            const trTag = document.createElement("tr");
+            const tdEl1 = document.createElement("td");
+            tdEl1.innerHTML=problems[i].title;
+            const tdEl2 = document.createElement("td");
+            tdEl2.innerHTML=problems[i].difficulty;
+            const tdEl3 = document.createElement("td");
+            tdEl3.innerHTML=problems[i].acceptance;
+
+            trTag.appendChild(tdEl1);
+            trTag.appendChild(tdEl2);
+            trTag.appendChild(tdEl3);
+            tableTag.appendChild(trTag);
+            parentEl.appendChild(tableTag);
+           }
+           
+        }
+
+        //shift
+
+        var cars = ["Honda","Hyundai","Mahindra"];
+	
+	var result = cars.shift();
+	
+	document.writeln("Result: ", cars + result);
+       
+  //unshift
+
+  var cars = ["Honda","Hyundai","Mahindra"];
+
+	var result = cars.unshift("Toyota", "Tata");
+
+	document.writeln("[", result, "] ", cars);
+
+  //
+
+  function x(){
+    setTimeout(function(){
+      console.log(i);
+    },1000);
+    var i = 1;
+  }
+
+  x();
+
+  //
+
+
+
+  //concepts of function
+  //1. Function will give error, Uncaught TypeError: getName is not a function, because it is assigned in variable
+
+  // getName();
+
+  // console.log(getName);
+
+  // var getName = function(){
+  //   console.log("Namaste");
+  // }
+
+  //2.Function will run as it is not binded in variable
+
+  //    getName();
+
+  //  console.log(getName);
+
+  //  function getName(){
+  //    console.log("Namaste");
+  // }
+
+ // 3. Function will give error, Uncaught TypeError: getName is not a function, because it is arrow function
+
+  //      getName();
+
+  //  console.log(getName);
+
+  //  var getName = () =>{
+  //    console.log("Namaste");
+  //  }
+
+
+    </script>
+  </body>
+</html>

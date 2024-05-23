@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let count=0;
+
+        (function printCount(){
+            if (count===0){
+                let count=1;//shadowing
+                console.log(count);//output=1
+            }
+            //count=0
+            console.log(count);//output=0
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //map, filter and reduce questions
+
+      //Q.1 Return only name of students in capital
+
+      let students = [
+        { name: "Piyush", rollNumber: 25, marks: 37 },
+        { name: "Jenny", rollNumber: 15, marks: 70 },
+        { name: "kaushal", rollNumber: 55, marks: 50 },
+        { name: "diljeet", rollNumber: 43, marks: 90 },
+      ];
+
+      //By using normal for loop
+
+      let names = [];
+
+      for (let i = 0; i < students.length; i++) {
+        names.push(students[i].name.toUpperCase());
+      }
+
+      console.log(names);
+
+      //By map function
+
+      const studentNames = students.map((stu) => stu.name.toUpperCase());
+
+      console.log(studentNames);
+    </script>
+
+    <script>
+      //Q.2 Return only students who scored more than 60 marks
+
+      let students1 = [
+        { name: "Piyush", rollNumber: 25, marks: 37 },
+        { name: "Jenny", rollNumber: 15, marks: 70 },
+        { name: "kaushal", rollNumber: 55, marks: 50 },
+        { name: "diljeet", rollNumber: 43, marks: 90 },
+      ];
+
+      let studentNames1 = students1.filter((stu) => stu.marks > 60);
+
+      console.log(studentNames1);
+    </script>
+
+    <script>
+         //Q.3 Return only students who scored more than 60 marks and roll number more than 30
+
+         let students2 = [
+        { name: "Piyush", rollNumber: 25, marks: 37 },
+        { name: "Jenny", rollNumber: 15, marks: 70 },
+        { name: "kaushal", rollNumber: 55, marks: 50 },
+        { name: "diljeet", rollNumber: 43, marks: 90 },
+      ];
+
+      let studentNames2 = students2.filter((stu) => stu.marks > 60 && stu.rollNumber>30);
+
+      console.log(studentNames2);
+    </script>
+
+    <script>
+        //Q.4 Sum of marks of all students
+
+        let students3 = [
+        { name: "Piyush", rollNumber: 25, marks: 37 },
+        { name: "Jenny", rollNumber: 15, marks: 70 },
+        { name: "kaushal", rollNumber: 55, marks: 50 },
+        { name: "diljeet", rollNumber: 43, marks: 90 },
+      ];
+
+      let studentNames3 = students3.reduce((acc,curr) => acc+curr.marks,0);
+
+      console.log(studentNames3);
+    </script>
+
+    <script>
+        //Q.5 Return only names students who scored more than 60 marks 
+
+        let students4 = [
+        { name: "Piyush", rollNumber: 25, marks: 37 },
+        { name: "Jenny", rollNumber: 15, marks: 70 },
+        { name: "kaushal", rollNumber: 55, marks: 50 },
+        { name: "diljeet", rollNumber: 43, marks: 90 },
+      ];
+
+      let studentNames4 = students4.filter((stu)=>stu.marks>60).map((res) => res.name);
+
+      console.log(studentNames4);
+    </script>
+
+    <script>
+
+        //Q.6 Return total marks for students with marks greater than 60,
+        //after 20 marks added to those who scored marks less than 60
+
+         let students5 = [
+        { name: "Piyush", rollNumber: 25, marks: 37 },
+        { name: "Jenny", rollNumber: 15, marks: 70 },
+        { name: "kaushal", rollNumber: 55, marks: 50 },
+        { name: "diljeet", rollNumber: 43, marks: 90 },
+      ];
+
+      let studentNames5 = students5.map((stu)=>{
+        if(stu.marks<60){
+         stu.marks+=20;
+        }
+        return stu
+      }).filter((res)=>res.marks>60)
+
+
+      console.log(studentNames5);
+    </script>
+  </body>
+</html>

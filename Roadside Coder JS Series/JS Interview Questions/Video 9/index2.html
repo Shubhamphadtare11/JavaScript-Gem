@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Callbackhell
+        //To solve callback hell we use promises
+        //We see below problem using promise in index3.html
+
+          console.log("Start");
+        //Output=Start
+        function importantAction1(username,cb){
+            setTimeout(()=>{
+                cb(`Subscribe to ${username}`)
+            },1000);
+        }
+
+        function likeTheVideo1(video,cb){
+            setTimeout(()=>{
+                cb(`Like the video ${video} video`);
+            },1000);
+        }
+
+        function shareTheVideo1(video,cb){
+            setTimeout(()=>{
+                cb(`Share the video ${video} video`);
+            },1000);
+        }
+
+        const message1 = importantAction1("Shubham",function(msg){
+            console.log(msg);
+            likeTheVideo1("Interview Question", (action)=>{
+                console.log(action);
+                shareTheVideo1("Interview Question", (action)=>{
+                console.log(action);
+            });
+            });
+        });
+
+        console.log("Stop");
+
+        //Output=
+//         Start
+// index2.html:40 Stop
+// index2.html:31 Subscribe to Shubham
+// index2.html:33 Like the video Interview Question video
+// index2.html:35 Share the video Interview Question video
+
+    </script>
+</body>
+</html>

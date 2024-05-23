@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Q.5 Call with function inside object
+
+      const age = 10;
+
+      var person = {
+        name: "Shubham",
+        age: 24,
+        getAge: function () {
+          return this.age;
+        },
+      };
+
+      var person2 = { age: 25 };
+
+      console.log(person.getAge());
+      //Output=24
+
+      console.log(person.getAge.call(person2));
+      //Output=25
+    </script>
+
+    <script>
+        //Q.5 Bind with function inside object
+
+      const age1 = 40;
+
+      var person1 = {
+        name1: "Rahul",
+        age1: 35,
+        getAge1: function () {
+          return this.age1;
+        },
+      };
+
+      var person3 = { age1: 30 };
+
+      console.log(person1.getAge1.bind(person3)());
+      //Output=30
+    </script>
+  </body>
+</html>

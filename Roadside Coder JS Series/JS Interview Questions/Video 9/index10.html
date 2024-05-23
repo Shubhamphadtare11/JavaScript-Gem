@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Q4
+
+        function job(){
+            return new Promise(function(resolve,reject){
+                reject();
+            });
+        }
+
+        let promise=job();
+
+        promise
+        .then(function(){
+            console.log("Success 1");
+        })
+        .then(function(){
+            console.log("Success 2");
+        })
+        .catch(function(){
+            console.log("Error 1");
+        })
+        .then(function(){
+            console.log("Success 4");
+        })
+        
+        //output=
+//         Error 1
+// index10.html:29 Success 4
+    </script>
+</body>
+</html>

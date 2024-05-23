@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Q.2 Write a function that would allow you to add 6 to any value you passing
+
+
+        function createBase(num){
+           // console.log(num)
+            return function(innerNum){
+                //console.log(innerNum)
+                console.log(innerNum+num);
+            }
+        }
+
+        var addSix=createBase(6);
+        addSix(10);//output=16
+        addSix(21);//output=27
+
+
+    </script>
+
+    <script>
+        //Q3 Time optimisation with closure is pending
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //map
+        //map=map method is used for creating new array from existing one by applying function to each elements of first array
+
+        const nums = [1,2,3,4,5];
+
+        const multiplyTwo = nums.map((num,i,arr)=>{
+            return num*2;
+        })
+
+        console.log(multiplyTwo);
+    </script>
+
+    <script>
+        //filter=filter method takes each element of an array and applies conditional statement against it, if the condition gets true element will get pushed into output array
+
+        const nums2  = [1,2,3,4,5]
+
+        const moreThanTwo = nums2.filter((num)=>{
+            return num>2;
+        })
+
+        console.log(moreThanTwo);
+    </script>
+
+    <script>
+        //reduce=reduce method reduces array of values down to just one value
+
+        const nums3 = [1,2,3,4,5]
+
+        const sum = nums3.reduce((acc,curr,i,arr)=>{
+            return acc+curr
+        },0)
+
+        console.log(sum)
+    </script>
+</body>
+</html>

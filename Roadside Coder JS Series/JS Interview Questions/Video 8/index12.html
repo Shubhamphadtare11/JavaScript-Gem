@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Q14 Explicit Binding with arrow function
+
+        const age=10;
+
+        var person = {
+            name:"Piyush",
+            age:20,
+            getAgeArrow:()=>console.log(this.age),
+            getAge:function(){
+                console.log(this.age);
+            },
+        };
+
+        var person2 = {age:24};
+        person.getAgeArrow.call(person2);//undefined, it wont work like normal function, this in arrow function will point to window object or parent function
+        person.getAge.call(person2);//24
+    </script>
+</body>
+</html>

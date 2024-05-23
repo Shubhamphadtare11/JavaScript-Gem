@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Q12 Fix code to give output
+
+        function checkPassword(success,failed){
+            let password = prompt("Password", "");
+            if(password == "Shubham") success();
+            else failed();
+        }
+
+        let user = {
+            name: "Shubham Phadtare",
+
+            loginSuccessful(){
+                console.log(`${this.name} logged in`);
+            },
+            loginFailed(){
+                console.log(`${this.name} failed to logged in`);
+            },
+        };
+        //before
+        // checkPassword(user.loginSuccessful,user.loginFailed);
+
+        //after
+        checkPassword(user.loginSuccessful.bind(user),user.loginFailed.bind(user));
+    </script>
+</body>
+</html>

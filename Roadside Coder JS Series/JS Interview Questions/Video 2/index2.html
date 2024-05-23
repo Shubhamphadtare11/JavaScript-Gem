@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //map vs foreach
+
+      //1. First difference
+
+      //map will not modify original array, it returns the result
+
+      const arrNums = [1, 2, 3, 4, 5];
+
+      const mapResult = arrNums.map((num) => {
+        return num + 2;
+      });
+
+      //forEach will modify original array
+
+      const forEachResult = arrNums.forEach((ar,i) => {
+        arrNums[i] = ar + 2;
+      });
+
+
+      console.log(mapResult);
+      console.log(forEachResult);
+      console.log(arrNums);
+    </script>
+
+    <script>
+        //2. We can chain any further operations like filter and reduce on map because, we cannot chain on foreach
+
+        
+    </script>
+  </body>
+</html>

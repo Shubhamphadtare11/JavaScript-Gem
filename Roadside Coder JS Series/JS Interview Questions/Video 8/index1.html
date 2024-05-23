@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Q.2 What is Apply
+      //same as call, but it takes all arguments in form of an array
+
+      var obj = { name: "Shubham" };
+
+      function sayHello(age, profession) {
+        return "Hello " + this.name + " is " + age + " and is an " + profession; //this will call the window object not name inside obj object
+      }
+
+      console.log(sayHello.apply(obj, [24, "Software Engineer"]));
+    </script>
+  </body>
+</html>

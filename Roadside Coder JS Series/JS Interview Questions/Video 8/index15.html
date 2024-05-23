@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Q17 Polyfill for Bind
+
+        
+        let car1 = {
+            color:"Red",
+            company:"ferrari",
+        }
+
+        function purchaseCar(currency,price){
+            console.log(`I have purchased ${this.color} - ${this.company} car for ${currency} ${price}`);
+        }
+
+        // const newFunc=purchaseCar.bind(car1);
+        // console.log(newFunc("Rs", 5000000));
+
+       //polyfill for call
+       Function.prototype.myBind=function(context={}, ...args){
+        if(typeof this !== "function"){
+            throw new Error(this + "Cannot be bound as Its not callable");
+        }
+        context.fn = this;
+        return function(...newArgs){
+            return context.fn(...args, ...newArgs)
+        };
+       };
+
+       const newFunc=purchaseCar.myBind(car1,"Rs", 5000000);
+        console.log(newFunc());
+    </script>
+</body>
+</html>

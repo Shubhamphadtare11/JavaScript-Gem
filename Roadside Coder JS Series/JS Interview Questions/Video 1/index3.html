@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        //When we run any javascript code GEC is created
+        //GEC=Global Execution Context
+        //There is 2 Execution Phase in GEC, 1. Memory Creation Phase 2. Execution Phase
+        //For every function call new GEC is created one inside another
+        //In memory creation phase, All variables and functions are stored
+        //Then in Execution phase it checks if variable already exists in memory creation phase
+
+         //Hoisting
+         //In memory creation phase, All variables and functions are stored, it is known as hoisting
+
+         //1 For var
+
+         console.log(a)
+         var a=5;
+
+         //output=undefined
+
+         //2 For let
+
+         console.log(b);
+         let b=2;
+
+         //output=Uncaught ReferenceError: Cannot access 'b' before initialization
+
+         //3 For const
+
+         console.log(c);
+         const c=8;
+
+         //Temporal Dead Zone=Time duration between variable declaration and initialisation of let and const variables
+
+
+    </script>
+</body>
+</html>

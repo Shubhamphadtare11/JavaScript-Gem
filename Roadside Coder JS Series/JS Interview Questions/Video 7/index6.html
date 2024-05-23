@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const user={
+            name:"Shubham",
+            greet(){
+              return `Hello, ${this.name}`;
+            },
+            farewell:()=>{
+                return `Goodbye, ${this.name}`
+            },
+        };
+
+        console.log(user.greet())//Hello Shubham
+        console.log(user.farewell())//Goodbye Blank
+    </script>
+</body>
+</html>

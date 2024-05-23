@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Q5 How would you use closure to create a private counter
+
+        function counter(){
+            var _counter=0;
+
+            function add(increment){
+                _counter+=increment;
+            }
+
+            function retrieve(){
+                return "Counter = " + _counter;
+            }
+
+            return{
+                add,
+                retrieve,
+            };
+        }
+
+        const c = counter();
+        c.add(5);
+        c.add(10);
+
+        console.log(c.retrieve())
+    </script>
+</body>
+</html>

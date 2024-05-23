@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Q4 whats JSON.stringify and JSON.parse
+        //where can be this usefull, most common usecase is storing it in local storage
+
+        const user = {
+            name:"Shubham",
+            age:25
+        }
+        console.log(user);
+        //output=
+//         {
+//     "name": "Shubham",
+//     "age": 25
+// }
+
+        //It will convert object to string
+        const strObj=JSON.stringify(user);
+        console.log(strObj);
+        //output={"name":"Shubham","age":25}
+
+        //to again convert to object
+        console.log(JSON.parse(strObj));
+        //output={
+//     "name": "Shubham",
+//     "age": 25
+// }
+
+
+        localStorage.setItem("test", strObj);
+
+        console.log(localStorage.getItem("test"))
+        //output={"name":"Shubham","age":25}
+
+        //It will convert string to object
+        console.log(JSON.parse(strObj))
+        //output={name: 'Shubham', age: 25}
+    </script>
+</body>
+</html>

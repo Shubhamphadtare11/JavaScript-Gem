@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    //1. Iterate over an array using for, map and forEach
+
+// let phones = ["Apple","One Plus","Samsung","Lava"];
+
+// console.log("Using for loop");
+
+// for(let i=0;i<phones.length;i++){
+//     console.log(phones[i]);
+// }
+
+// console.log("Using map");
+// phones.map((elem)=> console.log(elem));
+
+// console.log("Using forEach");
+// phones.forEach((elem)=>console.log(elem));
+
+//--------------------------------------------
+
+//2. Iterate over an object
+
+// let employee = {
+//     name:"Shubham",
+//     id:5,
+//     age:25
+// }
+
+// for(let key in employee){
+//     console.log(key + ":" + employee[key])
+// }
+
+//---------------------------------------------
+
+//5. write a program to create a new array from below array which contains crop item names and its total yield
+//total yield=area+yield
+
+// const crops = [
+//     {
+//         item:"Wheat",
+//         area:500,
+//         yield:10
+//     },
+//     {
+//         item:"Potato",
+//         area:800,
+//         yield:5
+//     }
+//     ,
+//     {
+//         item:"Soyabean",
+//         area:600,
+//         yield:10
+//     }
+// ]
+
+// let newCrops = crops.map((elem)=>{
+//     return{
+//         item:elem.item,
+//         totalYield: elem.area+elem.yield
+//     }
+// });
+
+// newCrops.map((elems)=>{
+//     console.log(elems)
+// })
+
+//------------------------------------------------------
+
+//check other problems on infy vs code after and here
+
+//----------------------------------------------------
+
+//6. sort the array of objects based on fee in ascending order
+
+// const beachGames = [{
+//     game:"Beach Soccer",
+//     fee:19.99
+// },
+// {
+//     game:"Beach Tennis",
+//     fee:9.99
+// },
+// {
+//     game:"frisbee",
+//     fee:4.99
+// }]
+
+// const sortedItems = beachGames.sort((a,b)=>{
+//     return a.fee-b.fee
+// })
+
+// console.log("Sorted Items:", sortedItems)
+
+//---------------------------------------------------
+
+//7. create a new array as shown ['Totoya','Honda','Maruti'] from below array of objects
+
+// const automobiles = [
+//     {
+// brand:"Toyota",
+// model:"Innova",
+// year:2020
+// },
+// {
+//     brand:"Honda",
+//     model:"Accord",
+//     year:2014
+//     },
+//     {
+//         brand:"Maruti",
+//         model:"Suzuki",
+//         year:2016
+//         }
+// ]
+
+// const newArray = automobiles.map((elem)=>{
+//     return elem.brand;
+// })
+
+// console.log(newArray)
+
+//--------------------------------------------------------------------
+
+//8. Calculate total price
+
+// const furniturePurchased = [
+//     {
+//         name:"chair",
+//         price:500
+//     },
+//     {
+//         name:"table",
+//         price:500
+//     },
+//     {
+//         name:"bed",
+//         price:500
+//     }
+// ]
+
+// const totalCost = furniturePurchased.reduce((acc,item)=>acc+item.price,0)
+
+// console.log(totalCost)
+
+//------------------------------
+
+//actual program starts
+
+//9. convert normal string into snake case
+
+// let string = "Hello Good Morning"
+
+// function snakeCase(str){
+//     let snakeCased = str.toLowerCase().replaceAll(" ", "_");
+//     console.log(snakeCased)
+// }
+
+// snakeCase(string)
+
+//---------------------------
+
+//10. Implement a program that removes all duplicate elements from an array
+
+// let arr = [4,3,6,3,12,2,2,1,4,1,5]
+
+// let uniqueArr = arr.filter((c,index)=>{
+//     return arr.indexOf(c) ===index;
+// })
+
+// console.log(uniqueArr);
+
+//-------------------------------------------
+
+//11. Sort elements of array in ascending order
+
+// let numbers = [3,5,6,2,7,34,22];
+
+// let sortedArray = numbers.sort((a,b)=>{
+//     return a-b;
+// })
+// console.log(sortedArray)
+
+//or write a function which takes array and returns sorted array in ascending order
+
+// function sortedArrayFunc1(arr){
+//     let sortedArray1 = arr.sort((a,b)=>{
+//         return a-b;
+//     })
+//     console.log(sortedArray1)
+// }
+
+// sortedArrayFunc1(numbers)
+
+//or return the result then print
+
+// function sortedArrayFunc2(arr){
+//     let sortedArray2 = arr.sort((a,b)=>{
+//         return a-b;
+//     })
+//     return sortedArray2;
+// }
+
+// let result = sortedArrayFunc2(numbers);
+
+// console.log(sortedArrayFunc2(numbers))
+// console.log(result)
+
+//-------------------------------------------
+
+//12. Find sum of odd numbers in an array
+
+// let numbers = [1,2,3,4,5,6,7,8,9];
+
+// function sumOddNumbers(nums){
+//     let filteredNum = nums.filter((elem)=>{
+//         return elem%2 !==0;
+//     })
+//     let result = filteredNum.reduce((acc,item)=>acc+item,0);
+//     return result;
+// }
+
+// let finalResult = sumOddNumbers(numbers);
+
+// console.log(finalResult);
+
+//---------------------------------------------
+
+//13. Write javascript code to convert javascript array of objects into single object, ex. [{a:1},{b:2},{c:3}] into {a:1,b:2,c:3}
+
+// let arr = [{a:1},{b:2},{c:3}];
+
+// let obj = arr.reduce((acc,item)=>{
+//     return {...acc,...item}
+// },{});
+
+// console.log(obj)
+
+//---------------------------------------------
+
+//14. Print factorial of any number
+
+// function getFactorial(inputNum){
+//     let result=1;
+//     for(let i=1;i<=inputNum;i++){
+//          result = result*i;
+//     }
+//     return result;
+// }
+
+// console.log(getFactorial(5))
+
+//-----------------------------
+
+//15. check number is even or not
+
+// function isPrime(inputNum){
+
+//     if(inputNum%2==0){
+//         return true;
+//     }
+//     else{
+//         return false;
+//     }
+// }
+
+// console.log(isPrime(20))
+
+//----------------------------------
+
+//16. Write a JavaScript program to find the maximum number in an array.
+
+// let arr1=[3,2,4,3,2,1,22]
+
+// function findMaxNumber(arr) {
+
+//     return Math.max(...arr);
+
+//   }
+// console.log(findMaxNumber(arr1));
+
+//--------------------------------------------
+
+//17.Write a JavaScript program to reverse a given string.
+
+//for single word in string
+// function reverseString(str){
+
+//     let result = str.split("").reverse().join("");
+//     return result;
+
+// }
+
+// console.log(reverseString("Shubham"))
+
+//for multiple words in string
+// function reverseString(str){
+
+//     let result = str.split(' ').map((elem) => {
+//         return elem.split('').reverse().join('');
+//     }).join(' ');
+//     return result;
+
+// }
+// console.log(reverseString("Shubham Phadtare"))
+
+//---------------------------------
+
+//18. to check given string is palindrome or not
+
+// function isPalindrome(str){
+
+// let result = str.split("").reverse().join("");
+// return result===str;
+// }
+
+// console.log(isPalindrome("nitin"))
+
+//------------------------------------------
+
+//19. Remove whitespace from string
+
+// function removeSpace(str){
+
+//     let result = str.replaceAll(" ","");
+//     return result
+//     }
+
+//     console.log(removeSpace(" Interview,  Happy "))
+
+//---------------------------------------
+
+//20. Check given number is prime or not;
+
+// function isPrime(number){
+//     for(let i=2; i<=number/2;i++){
+//         if(number%i===0){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// console.log(isPrime(8))
+
+//---------------------------------------
+
+//21. JavaScript String slice()
+//slice() extracts a part of a string and returns the extracted part in a new string.
+//The method takes 2 parameters: start position, and end position (end not included).
+
+// let text = "Apple, Banana, Kiwi";
+// let part = text.slice(7, 13);
+
+// console.log(part)
+
+//----------------------------------
+
+//22. The trim() method removes whitespace from both sides of a string:
+
+// let text1 = "      Hello World!      ";
+// let text2 = text1.trim();
+
+// console.log(text2);
+
+//-----------------------------------------------
+
+//23. JavaScript: Split a string and convert it into an array of words
+
+// string_to_array = function (str) {
+//     return str.split(" ");
+//   };
+//   console.log(string_to_array("Robin Singh"));
+
+//24. JavaScript: Check whether a string is blank or not
+
+// const is_Blank = function(str){
+// if(str===null){
+//     return true;
+// }
+// else{
+//     return false;
+// }
+// };
+
+// console.log(is_Blank("Shubham Phadtare"))
+
+//25. Write a JavaScript function to parameterize a string.
+
+// Test Data:
+// console.log(string_parameterize("Robin Singh from USA."));
+// "robin-singh-from-usa"
+
+// string_parameterize = function (str1) {
+//     return str1.trim().toLowerCase().replace(/[^a-zA-Z0-9 -]/, "").replace(/\s/g, "-");
+// };
+// console.log(string_parameterize("Robin Singh from USA."));
+
+//26. Write a JavaScript function to capitalize the first letter of a string.
+
+// capitalize = function(str1){
+//     return str1.charAt(0).toUpperCase() + str1.slice(1);
+//   }
+
+//    console.log(capitalize('js string exercises'));
+
+//27. Write a JavaScript function to capitalize the first letter of each word in a string.
+
+//capitalize_Words
+// function capitalize_Words(str)
+// {
+//  return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+// }
+// console.log(capitalize_Words('js string exercises'));
+
+//28. Write a JavaScript function to convert a string into camel case.
+
+// camelize = function camelize(str) {
+//     return str.replace(/\W+(.)/g, function(match, chr)
+//      {
+//           return chr.toUpperCase();
+//       });
+//   }
+
+// console.log(camelize("JavaScript Exercises"));
+// console.log(camelize("JavaScript exercises"));
+
+//------------------------------------------------
+
+//ex.29
+
+// const myFunction = () => console.log("Hello") || "World!";
+// let returnValue = myFunction();
+// console.log(returnValue);
+
+//-----------------------------------------------
+
+// import React from "react";
+
+// import ReactDOM from "react-dom/client";
+
+// import App from "./App.jsx";
+
+// import "./index.css";
+
+// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+// const queryClient = new QueryClient();
+
+// ReactDOM.createRoot(document.getElementById("root")).render(
+//   <React.StrictMode>
+//     <QueryClientProvider client={queryClient}>
+//       <App />
+//     </QueryClientProvider>
+//   </React.StrictMode>
+// );
+
+
+// class Animal{
+//   constructor (name){
+//     this.name=name;
+//   }
+// }
+
+// class Dog extends Animal{
+//   constructor(name, breed){
+//     super(name);
+//     this.breed=breed;
+//   }
+
+// }
+
+// const obj1 = new Animal("cat");
+// const obj2 = new Dog("Moti","Pomelian")
+// console.log(obj2)
+
+//----------------------------------
+
+//Constructor function
+
+// function Animal(name, breed){
+// this.name=name;
+// this.breed=breed;
+// }
+
+// Animal.prototype.sound = function(){
+//   console.log("Some animal sound");
+// }
+
+// const obj1 = new Animal("Dog","Pomelian");
+// obj1.sound()
+
+//--------------------------------
+
+//ex.30
+
+// let arr = [1, 2, 3, 4, 5];
+
+// let removed = arr.splice(2, 1, 'a', 'b','c');
+
+// console.log(arr); // Output: [1, 2, 'a', 'b', 5]
+
+// console.log(removed); // Output: [3, 4]
+
+//-------------------------------------------
+
+//ex.31
+//filter and render unique elements from an array
+
+let names = ["Shubham","Ram","Sham","Rohan","Ram","Shubham"];
+
+let filteredNames = names.filter((name, index)=>{
+    return names.indexOf(name)===index;
+});
+
+console.log(filteredNames);
+
+
+   </script> 
+</body>
+</html>

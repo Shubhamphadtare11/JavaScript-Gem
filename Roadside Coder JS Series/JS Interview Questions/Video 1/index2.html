@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //var vs let vs const 
+
+        //declaration
+        
+        //1 For var
+        var a;
+        var a;
+
+        //output fine
+
+        //2 For let
+        let b;
+        let b;
+
+        //syntax error
+
+         //3 For const
+         const c;
+         const c;
+
+        //syntax error
+
+        //summary=let and const cannot be redeclared in same scope, var can redeclared in same scope
+
+        //4
+        let d;
+        {
+            let d;
+        }
+        //this is fine because it comes under shadowing
+    </script>
+
+    <script>
+        //Declaration without initialisation
+
+       // for let and var we dont have to declare and initialise at same time, we can initialise later
+        
+       //1 let, Acceptable
+
+        let e;
+
+        //fine
+
+        //2 var, Acceptable
+
+        var f;
+
+        
+        //3 for const we have to declare and initialise at same time
+
+        const g;
+
+        //syntax error
+
+        //declaration and initialisation
+        const h=4;
+
+        //fine
+    </script>
+
+    <script>
+       // Re-Initialisation
+
+       //1 For var, Acceptable
+
+       var x=5;
+       x=7;
+
+       console.log(x)
+
+       //2 For let, Acceptable
+
+       let y=6;
+       y=8;
+
+       console.log(y)
+
+       //3 For const, Not Acceptable
+
+       const z=8;
+       z=10;
+    </script>
+</body>
+</html>

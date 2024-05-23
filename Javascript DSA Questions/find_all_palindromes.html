@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function canFormPalindrome(str) {
+    const charFrequency = new Map();
+    
+    // Count the frequency of each character
+    for (let char of str) {
+        charFrequency.set(char, (charFrequency.get(char) || 0) + 1);
+    }
+    
+    // Count the number of characters with odd frequency
+    let oddCount = 0;
+    for (let [char, frequency] of charFrequency) {
+        if (frequency % 2 !== 0) {
+            oddCount++;
+        }
+    }
+    
+    // If there's at most one character with odd frequency, it can form a palindrome
+    return oddCount <= 1;
+}
+
+// Example usage:
+const inputString = "rarecac";
+console.log(canFormPalindrome(inputString)); // Output: true
+
+    </script>
+</body>
+</html>

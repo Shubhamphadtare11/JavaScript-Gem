@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 id="heading">
+           
+        </h1>
+    </div>
+    <script>
+        //Q5 We can manipulate DOM using currying
+
+        function updateElementText(id){
+            return function (content){
+                document.querySelector("#" + id).textContent=content;
+            }
+        }
+
+        const updateHeader=updateElementText("heading");
+        updateHeader("Good Evening")    
+
+        //Good Evening will be shown on ui
+    </script>
+</body>
+</html>

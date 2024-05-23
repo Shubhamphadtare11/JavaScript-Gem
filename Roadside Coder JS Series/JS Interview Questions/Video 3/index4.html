@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Q.1
+
+      var x = 21;
+
+      var fun = function () {
+        console.log(x);
+        var x = 20;
+      };
+
+      fun();
+
+      //Output=undefined
+      //when we have variable after or before in console.log local scope we will not go to global scope
+      //this is beacuse first memory creation phase is created then execution phase created for every scope, first global scope var x =21 stored, then for fun function again memory creation phase is created then execution phase created so var x is still undefined, therefore output is undefined
+    </script>
+
+    <script>
+      //Q.2 (Now output will be value)
+
+      var y = 21;
+
+      var fun1 = function () {
+        console.log(y);
+        //var y=20;
+      };
+
+      fun1();
+      
+      //here no var is declared inside function thats why output is printed
+    </script>
+  </body>
+</html>

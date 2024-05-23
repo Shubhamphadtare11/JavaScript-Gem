@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <script>
+      // Sometimes you would like to have better control over when to execute a function.
+
+      // Suppose you want to do a calculation, and then display the result.
+
+      // You could call a calculator function (myCalculator), save the result, and then call another function (myDisplayer) to display the result:
+      function sum(num1, num2) {
+        return num1 + num2;
+      }
+
+      function display(result) {
+        document.getElementById("demo").innerHTML = result;
+      }
+
+      let result = sum(5, 5);
+      display(result);
+    </script>
+    <script>
+      function myDisplayer(some) {
+        document.getElementById("demo").innerHTML = some;
+      }
+
+      function myCalculator(num1, num2) {
+        let sum = num1 + num2;
+        myDisplayer(sum);
+      }
+
+      myCalculator(5, 5);
+    </script>
+    <script>
+      //         JavaScript Callbacks
+      // A callback is a function passed as an argument to another function.
+
+      // Using a callback, you could call the calculator function (myCalculator) with a callback (myCallback), and let the calculator function run the callback after the calculation is finished:
+
+      function myDisplayer(some) {
+        document.getElementById("demo").innerHTML = some;
+      }
+
+      function myCalculator(num1, num2, myCallback) {
+        let sum = num1 + num2;
+        myCallback(sum);
+      }
+
+      myCalculator(5, 5, myDisplayer);
+
+      // In the example above, myDisplayer is a called a callback function.
+
+      // It is passed to myCalculator() as an argument.
+    </script>
+    <script>
+      //First class functions
+
+      function Square(num) {
+        return num * num;
+      }
+
+      function displaySquare(fn) {
+        console.log("Square is" + fn(5));
+      }
+
+      displaySquare(Square);
+    </script>
+  </body>
+</html>

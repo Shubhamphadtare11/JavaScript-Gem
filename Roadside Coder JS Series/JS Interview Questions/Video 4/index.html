@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Closures in JS
+        //A closure is the combination of a function bundled together (enclosed) with references to its surrounding state(lexical environment), In the other words, a closure gives you access to an outer function's scope from inner function
+
+        //Lexical scope
+
+        var name="hi coder"
+
+        //global scope
+        function local(){
+            //local scope
+            console.log(name)
+        }
+
+        local()
+
+        //output=hi coder
+
+    </script>
+
+    <script>
+        //we cannot access variables from inside of the function from outside
+
+          function local1(){
+            //local scope
+            var name1="hi coder1"    
+        }
+        console.log(name1)   
+
+        local1()
+
+        //output=Uncaught ReferenceError: name1 is not defined
+    </script>
+</body>
+</html>
