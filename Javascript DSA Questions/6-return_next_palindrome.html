@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const isPalindrome = (num) => {
+        return num.toString() === num.toString().split("").reverse().join("");
+      }
+
+      const getNextPalindrome=(num) => {
+        for (let i = num + 1; ; i++) {
+          if (isPalindrome(i)) {
+            return i;
+          }
+        }
+      }
+
+      // Example usage:
+      console.log(getNextPalindrome(232));
+    </script>
+  </body>
+</html>

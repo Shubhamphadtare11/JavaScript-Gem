@@ -15,12 +15,7 @@
 // Input: (s = "rat"), (t = "car");         ----->>>>>   Output: false;
 
 // 1st Approach
-const isAnagram = function (s, t) {
-  s = s.split("").sort().join("");
-  t = t.split("").sort().join("");
-
-  return s === t;
-};
+const isAnagram = (s, t) =>  s.split("").sort().join("") === t.split("").sort().join("");
 
  console.log(isAnagram("anagram", "nagarm"));
 
