@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Player{
+            constructor(name,type){
+                this.name=name;
+                this.type=type;
+            }
+
+            introduce(){
+                console.log(`Hi I am ${this.name} and type ${this.type}`)
+            }
+        }
+
+        class Wizard extends Player{
+            constructor(name,type){
+                super(name,type)
+            }
+
+            play(){
+                console.log(`weeeeii I am ${this.type} type`)
+            }
+        }
+
+        const wizard1 = new Wizard("Shubham","Man");
+        wizard1.introduce();
+    </script>
+</body>
+</html>

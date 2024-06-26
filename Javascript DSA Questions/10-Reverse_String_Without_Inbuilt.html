@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  Without Inbuilt
+      let input = "Reverse me please";
+
+      function reverseFunction(str) {
+        let result = "";
+        for (let i = str.length - 1; i >= 0; i--) {
+          result += str[i];
+        }
+        return result;
+      }
+
+      let output = reverseFunction(input);
+      console.log(output);
+
+      //With Inbuilt method
+      let input1 = "Reverse me please";
+
+      function reverseFunction1(str) {
+        let result = str.split("").reverse().join("");
+        return result;
+      }
+
+      let output1 = reverseFunction1(input);
+      console.log(output1);
+    </script>
+  </body>
+</html>

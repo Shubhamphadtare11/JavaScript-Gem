@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //With Inbuilt method
+      let input = "Mr red has a red car and red house";
+
+      function replaceFunction(str) {
+        let result = str.split("red").join("blue");
+        return result;
+      }
+
+      let output = replaceFunction(input);
+      console.log(output);
+    </script>
+  </body>
+</html>

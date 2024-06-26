@@ -18,29 +18,29 @@
       }
 
       // Example usage:
-      let stringWithoutDuplicates = removeDuplicates("hello");
-      console.log(stringWithoutDuplicates); // Output: "helo"
+      let input="Hello"
+      let output=removeDuplicates(input)
+      console.log(output); // Output: "helo"
     </script>
 
     <script>
       //Implement a program that removes all duplicate elements from an array
 
-      let arr = [4,3,6,3,12,2,2,1,4,1,5]
+      let arr = [4, 3, 6, 3, 12, 2, 2, 1, 4, 1, 5];
 
       let newArr = new Set(arr);
 
-      let uniqueArr = [...newArr]
+      let uniqueArr = [...newArr];
 
       console.log(uniqueArr);
-      console.log(arr);
     </script>
     <script>
-            let names = ["Shubham","Ram","Sham","Rohan","Ram","Shubham"];
+      let names = ["Shubham", "Ram", "Sham", "Rohan", "Ram", "Shubham"];
 
-let filteredNames = new Set(names);
-let uniqueElements = [...filteredNames]
+      let filteredNames = new Set(names);
+      let uniqueElements = [...filteredNames];
 
-console.log(uniqueElements);
+      console.log(uniqueElements);
     </script>
   </body>
 </html>
