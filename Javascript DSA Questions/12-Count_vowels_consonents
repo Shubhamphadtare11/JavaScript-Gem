@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+   const vocabFunction = (input) => {
+    let vowels = "aeiou";
+    let consonentsCount = 0;
+    let vowelsCount = 0;
+
+    for (let i = 0; i < input.length; i++) {
+        let char = input[i].toLowerCase(); // Convert character to lowercase for easier comparison
+
+        if (char === " ") {
+            continue; // Skip counting spaces
+        } else if (vowels.includes(char)) {
+            vowelsCount += 1; // Increment vowel count if the character is a vowel
+        } else {
+            consonentsCount += 1; // Increment consonant count otherwise
+        }
+    }
+
+    console.log("Vowels Count:", vowelsCount);
+    console.log("Consonants Count:", consonentsCount);
+};
+
+let input = "My name is Shubham";
+vocabFunction(input);
+
+    </script>
+  </body>
+</html>

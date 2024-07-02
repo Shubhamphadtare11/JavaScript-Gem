@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+     function stringLogic(input){
+    let output = "";
+    for (let i = 0; i < input.length; i++) {
+        if (isNaN(input[i])) { // Check if current character is not a number
+            let count = parseInt(input[i+1]); // Parse the next character as an integer
+            for (let j = 0; j < count; j++) {
+                output += input[i]; // Append the character 'count' times to output
+            }
+            // Skip to the next character (the digit)
+            i++;
+        }
+    }
+    return output;
+}
+
+let str = "a2b3c1d4";
+console.log(stringLogic(str)); // Output: "aabbbcdddd"
+    </script>
+  </body>
+</html>
