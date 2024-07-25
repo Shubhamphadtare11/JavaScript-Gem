@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const power = (num, target) => {
+    if (num != 0) {
+        let result = 1;
+        for (let i = 1; i <= target; i++) {
+            result = result * num;
+        }
+        return result;
+    } else {
+        return "not valid";
+    }
+}
+
+console.log(power(100, 2)); // Output: 10000
+
+    </script>
+</body>
+</html>

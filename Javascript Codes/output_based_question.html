@@ -9,15 +9,15 @@
     <script>
       //1. Tricky hoisting question
 
-    //   var x = 21;
+      // var x = 21;
 
-    //   var fun = function () {
-    //     console.log(x);
-    //     //if we comment below it will give output of 21 if not commented output will be undefined
-    //     // var x=20;
-    //   };
+      // var fun = function () {
+      //   console.log(x);
+      //   //if we comment below it will give output of 21 if not commented then output will be undefined
+      //   // var x=20;
+      // };
 
-    //   fun();
+      // fun();
 
       //output for above will be undefined
 
@@ -45,7 +45,8 @@
     //4.
 
     // function a(){
-    //         for(var i=0;i<3;i++){
+    //         for(var i=0;i<=3;i++){
+              
     //             setTimeout(function log(){
     //                 console.log(i);
     //             },i*1000);
@@ -54,7 +55,7 @@
 
     //     a();
 
-    //     //output=3,3,3
+        //output=4,4,4,4
 
     // //this output is expected because var is having function scope, while let and var having block scope
 
@@ -80,6 +81,7 @@
     //         var i=1;
     //     }
     //     x()
+    //     //output=1
 
     //6.
 
