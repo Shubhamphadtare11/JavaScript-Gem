@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-       //class example
-       class Counter{
-    
-    constructor( counter=0){
-        this.counter=counter
-    }
+      //class example
+      class Counter {
+        constructor(counter = 0) {
+          this.counter = counter;
+        }
 
-     IncreaseCounter = (counter)=>this.counter =this.counter+1
-      DecreaseCounter = (counter)=>this.counter =this.counter-1
-}
+        IncreaseCounter = (counter) => (this.counter = this.counter + 1);
+        DecreaseCounter = (counter) => (this.counter = this.counter - 1);
+      }
 
-const Increase = new Counter()
-console.log(Increase.IncreaseCounter())
-console.log(Increase.IncreaseCounter())
-console.log(Increase.DecreaseCounter())
-console.log(Increase.DecreaseCounter())
+      const Increase = new Counter();
+      console.log(Increase.IncreaseCounter());
+      console.log(Increase.IncreaseCounter());
+      console.log(Increase.DecreaseCounter());
+      console.log(Increase.DecreaseCounter());
     </script>
     <script>
-        //currying example
-        function counter(){
-    let counter=3;
-    const IncreaseCounter = ()=>{
-    return    counter=counter+1;
-    }
-     const DecreaseCounter = ()=>{
-      return counter=counter-1;
-    }
-    return {IncreaseCounter, DecreaseCounter}
-}
-let counters = counter();
-console.log(counters.IncreaseCounter())
-console.log(counters.DecreaseCounter())
-     </script>
-</body>
+      //currying example
+      function counter() {
+        let counter = 3;
+        const IncreaseCounter = () => {
+          return (counter = counter + 1);
+        };
+        const DecreaseCounter = () => {
+          return (counter = counter - 1);
+        };
+        return { IncreaseCounter, DecreaseCounter };
+      }
+      let counters = counter();
+      console.log(counters.IncreaseCounter());
+      console.log(counters.DecreaseCounter());
+    </script>
+  </body>
 </html>
